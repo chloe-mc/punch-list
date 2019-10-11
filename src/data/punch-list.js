@@ -1,0 +1,88 @@
+const punchList = [
+	{
+		"description": "Paint touch ups on front door",
+		"room": "Foyer",
+		"latLng": [
+			32.74100101300775,
+			-97.36794769763947
+		],
+		"discipline": "Interiors",
+		"due-date": "10/25/2019",
+		"state": "Open",
+		"floor": 1
+	},
+	{
+		"description": "Light doesn't work",
+		"room": "Office",
+		"latLng": [
+			32.74178160990982,
+			-97.36838757991791
+		],
+		"discipline": "Interiors",
+		"due-date": "10/26/2019",
+		"state": "Open",
+		"floor": 2
+	},
+	{
+		"description": "Faucet broken in men's restroom",
+		"room": "Restroom",
+		"latLng": [
+			32.74142064109407,
+			-97.36888647079466
+		],
+		"discipline": "Plumbing",
+		"due-date": "10/27/2019",
+		"state": "Open",
+		"floor": 1
+	},
+	{
+		"description": "Faulty camera behind box office register",
+		"room": "Reception",
+		"latLng": [
+			32.74046406666033,
+			-97.3682963848114
+		],
+		"discipline": "Plumbing",
+		"due-date": "10/27/2019",
+		"state": "Open",
+		"floor": 1
+	},
+	{
+		"description": "Someone's trampled the azaleas!",
+		"room": "Exterior",
+		"latLng": [
+			32.74157856513089,
+			-97.36794769763947
+		],
+		"discipline": "Landscape",
+		"due-date": "10/28/2019",
+		"state": "Open",
+		"floor": 1
+	},
+	{
+		"description": "Toilet will not flush",
+		"room": "Restroom",
+		"latLng": [
+			32.74037833543139,
+			-97.36894011497498
+		],
+		"discipline": "Plumbing",
+		"due-date": "10/10/2019",
+		"state": "Completed",
+		"floor": 1
+	},
+	{
+		"description": "Toilet won't stop flushing",
+		"room": "Restroom",
+		"latLng": [
+			32.74037833543139,
+			-97.36894011497498
+		],
+		"discipline": "Plumbing",
+		"due-date": "10/11/2019",
+		"state": "In Progress",
+		"floor": 1
+	}
+];
+
+export default punchList;
