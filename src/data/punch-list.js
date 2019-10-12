@@ -9,7 +9,7 @@ const punchList = [
 		"discipline": "Interiors",
 		"due-date": "10/25/2019",
 		"state": "Open",
-		"floor": 1
+		"floor": "1"
 	},
 	{
 		"description": "Light doesn't work",
@@ -21,7 +21,7 @@ const punchList = [
 		"discipline": "Interiors",
 		"due-date": "10/26/2019",
 		"state": "Open",
-		"floor": 2
+		"floor": "2"
 	},
 	{
 		"description": "Faucet broken in men's restroom",
@@ -33,7 +33,7 @@ const punchList = [
 		"discipline": "Plumbing",
 		"due-date": "10/27/2019",
 		"state": "Open",
-		"floor": 1
+		"floor": "1"
 	},
 	{
 		"description": "Faulty camera behind box office register",
@@ -42,10 +42,10 @@ const punchList = [
 			32.74046406666033,
 			-97.3682963848114
 		],
-		"discipline": "Plumbing",
+		"discipline": "Security",
 		"due-date": "10/27/2019",
 		"state": "Open",
-		"floor": 1
+		"floor": "1"
 	},
 	{
 		"description": "Someone's trampled the azaleas!",
@@ -57,7 +57,7 @@ const punchList = [
 		"discipline": "Landscape",
 		"due-date": "10/28/2019",
 		"state": "Open",
-		"floor": 1
+		"floor": "1"
 	},
 	{
 		"description": "Toilet will not flush",
@@ -69,7 +69,7 @@ const punchList = [
 		"discipline": "Plumbing",
 		"due-date": "10/10/2019",
 		"state": "Completed",
-		"floor": 1
+		"floor": "1"
 	},
 	{
 		"description": "Toilet won't stop flushing",
@@ -81,7 +81,7 @@ const punchList = [
 		"discipline": "Plumbing",
 		"due-date": "10/11/2019",
 		"state": "In Progress",
-		"floor": 1
+		"floor": "2"
 	}
 ];
 
