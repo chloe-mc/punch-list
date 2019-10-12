@@ -1,4 +1,4 @@
-{
+const blueprint = {
 	"type": "FeatureCollection",
 	"features": [
 		{
@@ -158,3 +158,5 @@
 		}
 	]
 }
+
+export default blueprint;
