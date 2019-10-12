@@ -1,13 +1,13 @@
 const punchList = [
 	{
-		"description": "Paint touch ups on front door",
+		"description": "Touch up paint on front door",
 		"room": "Foyer",
 		"latLng": [
 			32.74100101300775,
 			-97.36794769763947
 		],
 		"discipline": "Interiors",
-		"due-date": "10/25/2019",
+		"duedate": "10/25/2019",
 		"state": "Open",
 		"floor": "1"
 	},
@@ -19,7 +19,7 @@ const punchList = [
 			-97.36838757991791
 		],
 		"discipline": "Interiors",
-		"due-date": "10/26/2019",
+		"duedate": "10/26/2019",
 		"state": "Open",
 		"floor": "2"
 	},
@@ -31,7 +31,7 @@ const punchList = [
 			-97.36888647079466
 		],
 		"discipline": "Plumbing",
-		"due-date": "10/27/2019",
+		"duedate": "10/27/2019",
 		"state": "Open",
 		"floor": "1"
 	},
@@ -43,7 +43,7 @@ const punchList = [
 			-97.3682963848114
 		],
 		"discipline": "Security",
-		"due-date": "10/27/2019",
+		"duedate": "10/27/2019",
 		"state": "Open",
 		"floor": "1"
 	},
@@ -55,7 +55,7 @@ const punchList = [
 			-97.36794769763947
 		],
 		"discipline": "Landscape",
-		"due-date": "10/28/2019",
+		"duedate": "10/28/2019",
 		"state": "Open",
 		"floor": "1"
 	},
@@ -67,7 +67,7 @@ const punchList = [
 			-97.36894011497498
 		],
 		"discipline": "Plumbing",
-		"due-date": "10/10/2019",
+		"duedate": "10/10/2019",
 		"state": "Completed",
 		"floor": "1"
 	},
@@ -79,7 +79,7 @@ const punchList = [
 			-97.36894011497498
 		],
 		"discipline": "Plumbing",
-		"due-date": "10/11/2019",
+		"duedate": "10/11/2019",
 		"state": "In Progress",
 		"floor": "2"
 	}

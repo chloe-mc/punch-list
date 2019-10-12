@@ -12,3 +12,7 @@ it('renders points on the map', () => {
 	// expect(wrapper.ref('markerRef').current.props.children.length).toBe(1);
 	expect(true).toBeTruthy();
 });
+
+// it('returns next index', () => {
+// 	expect(nextIndex(2, [1, 1, 1])).toBe(0);
+// })

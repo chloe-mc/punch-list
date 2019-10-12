@@ -1,0 +1,7 @@
+.Message-box {
+	z-index: 9000;
+	position: absolute; 
+	top: 0;
+	right: 50%;
+	background-color: rgba(0,0,0,0.5);
+}

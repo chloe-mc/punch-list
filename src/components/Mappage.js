@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import './Mappage.css';
 import dao from '../data/punch-list-dao';
-import { Map, TileLayer, Marker, Popup, FeatureGroup, GeoJSON } from 'react-leaflet';
+import { Map, TileLayer, CircleMarker, Popup, FeatureGroup, GeoJSON } from 'react-leaflet';
 import blueprint from '../data/blueprint.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Message from '../components/Message';
 
 const mapConfig = {
 	accessToken: "pk.eyJ1IjoiY2hsb2UtbWMiLCJhIjoiY2praGJibDFuMHNvZzN2bzNtcWZnbXhhcCJ9.xXYfoIoIpRaO4CXYrqywZw",
@@ -13,12 +17,11 @@ export default class Mappage extends Component {
 		super(props)
 
 		this.state = {
-			discipline: props.discipline || null,
-			query: props.query || null,
 			punchList: null,
 			position: null,
 			isLoading: true,
-			zoom: 22
+			zoom: 21,
+			currentIndex: 0
 		}
 	}
 
@@ -29,8 +32,31 @@ export default class Mappage extends Component {
 		let lyr = this.markerRef.current.leafletElement.getLayers()[index];
 		lyr.openPopup();
 		this.setState({
+			currentIndex: index,
 			position: lyr.getLatLng()
-		})
+		});
+		return lyr.getLatLng();
+	}
+
+	nextIndex = (i, list) => {
+		return i + 1 === list.length ? 0 : i + 1;
+	}
+
+	prevIndex = (i, list) => {
+		return i - 1 < 0 ? list.length - 1 : i - 1;
+	}
+
+	getColor(state) {
+		switch (state.toLowerCase()) {
+			case "open":
+				return "green";
+			case "in progress":
+				return "orange";
+			case "completed":
+				return "red";
+			default:
+				return "gray";
+		}
 	}
 
 	componentDidMount() {
@@ -38,31 +64,37 @@ export default class Mappage extends Component {
 		console.log(punchList);
 		this.setState({
 			punchList,
-			position: punchList[0].latLng,
+			position: punchList.length > 0 ? punchList[0].latLng : null,
 			isLoading: false
 		});
-		console.log(this.mapRef);
-		console.log(this.markerRef);
+		console.log('did mount');
 		setTimeout(() => {
-			this.showPopup(0);
-		}, 600)
+			this.showPopup(this.state.currentIndex);
+		}, 500)
 	}
 
 	render() {
-		const { isLoading, position, zoom } = this.state;
+		const { isLoading, position, zoom, punchList, currentIndex } = this.state;
 
 		if (isLoading) return <p>Loading...</p>;
 
 		let markers = [];
-		this.state.punchList.forEach((item, i) => {
-			markers.push(
-				<Marker position={item.latLng}>
-					<Popup autoPan={true} className="popupFormat">
-						<h4>{item.description}</h4>
-					</Popup>
-				</Marker>
-			)
-		});
+		if (punchList) {
+			punchList.forEach((item, i) => {
+				let stateColor = this.getColor(item.state);
+				markers.push(
+					<CircleMarker center={item.latLng} color={stateColor}>
+						<Popup autoPan={true} className="popupFormat">
+							<div>
+								<h4>{item.description}</h4>
+								<p>Due: {item.duedate} </p>
+								<p style={{ color: stateColor }}>{item.state}</p>
+							</div>
+						</Popup>
+					</CircleMarker>
+				)
+			});
+		}
 
 		if (typeof window !== 'undefined') {
 			return (
@@ -70,7 +102,7 @@ export default class Mappage extends Component {
 					ref={this.mapRef}
 					center={position}
 					zoom={zoom}
-					className="map">
+					className="Mappage-map">
 					<TileLayer
 						attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 						url={"https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=" + mapConfig.accessToken}
@@ -78,9 +110,15 @@ export default class Mappage extends Component {
 					{markers ?
 						<FeatureGroup ref={this.markerRef}>
 							{markers}
-						</FeatureGroup> : null
+						</FeatureGroup> : <Message message="¯\_(ツ)_/¯" />
 					}
 					<GeoJSON data={blueprint} />
+					<div className="Mappage-arrow left" onClick={() => this.showPopup(this.prevIndex(currentIndex, punchList))}>
+						<FontAwesomeIcon icon={faArrowLeft} />
+					</div>
+					<div className="Mappage-arrow right" onClick={() => this.showPopup(this.nextIndex(currentIndex, punchList))}>
+						<FontAwesomeIcon icon={faArrowRight} />
+					</div>
 				</Map>
 			)
 		}
