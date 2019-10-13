@@ -4,6 +4,8 @@ This application will display construction site punch list data on a map.
 
 [View on GitHub](https://github.com/chloe-mc/punch-list)
 
+[View live](https://hungry-jepsen-b25582.netlify.com)
+
 ## Build Instructions
 
 To run the test suite:	
