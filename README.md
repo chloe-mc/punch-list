@@ -11,8 +11,15 @@ This application will display construction site punch list data on a map for rev
  - __Possible Solution__: Cluster the points when user is zoomed out, reveal individual points as user zooms in. 
 
 ### The data structure is superficial and error prone.
- - __Possible Solution__: I would flesh out the data structure, using lookups for disciplines and rooms. A relationship between disciplines and subcontractors is needed.
+ - __Possible Solution__: I would flesh out the data structure, using lookups for disciplines and rooms. 
 
+## Biggest Challenges
+ 
+1. __Testing__
+This was the first time I've done test driven development. My understanding of syntax and best practices was limited and caused a few delays during the project. 
+
+2. __Filtering algorithm__
+The main business logic of the application needed to be tight and immediately understandable. I spent extra time on this section ensuring it would perform as expected.
 
 # Planning
 
@@ -52,7 +59,7 @@ This application will display construction site punch list data on a map for rev
 			-97
 		],
 		"discipline": "string",
-		"due-date": "1/1/1900",
+		"duedate": "1/1/1900",
 		"state": "string",
 		"floor": 1
 	}

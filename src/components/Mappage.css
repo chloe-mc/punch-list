@@ -3,6 +3,11 @@
     height: 100vh;
 }
 
+.Mappage-map th {
+	padding-right: 10px;
+	text-align: right;	
+}
+
 .Mappage-arrow {
 	z-index: 9000;	
 	color: white;

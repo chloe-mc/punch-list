@@ -1,5 +1,27 @@
 const punchList = [
 	{
+		"description": "Toilet will not flush",
+		"room": "Restroom",
+		"latLng": [
+			32.74037833543139,
+			-97.36894011497498
+		],
+		"discipline": "Plumbing",
+		"duedate": "10/10/2019",
+		"state": "Completed",
+		"floor": "1"
+	}, {
+		"description": "Toilet will not stop flushing",
+		"room": "Restroom",
+		"latLng": [
+			32.74037833543139,
+			-97.36904011497498
+		],
+		"discipline": "Plumbing",
+		"duedate": "10/11/2019",
+		"state": "In Progress",
+		"floor": "2"
+	}, {
 		"description": "Touch up paint on front door",
 		"room": "Foyer",
 		"latLng": [
@@ -18,7 +40,7 @@ const punchList = [
 			32.74178160990982,
 			-97.36838757991791
 		],
-		"discipline": "Interiors",
+		"discipline": "Electrical",
 		"duedate": "10/26/2019",
 		"state": "Open",
 		"floor": "2"
@@ -58,30 +80,6 @@ const punchList = [
 		"duedate": "10/28/2019",
 		"state": "Open",
 		"floor": "1"
-	},
-	{
-		"description": "Toilet will not flush",
-		"room": "Restroom",
-		"latLng": [
-			32.74037833543139,
-			-97.36894011497498
-		],
-		"discipline": "Plumbing",
-		"duedate": "10/10/2019",
-		"state": "Completed",
-		"floor": "1"
-	},
-	{
-		"description": "Toilet won't stop flushing",
-		"room": "Restroom",
-		"latLng": [
-			32.74037833543139,
-			-97.36894011497498
-		],
-		"discipline": "Plumbing",
-		"duedate": "10/11/2019",
-		"state": "In Progress",
-		"floor": "2"
 	}
 ];
 
