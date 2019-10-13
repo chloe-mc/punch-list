@@ -5,7 +5,6 @@
 
 .Mappage-map th {
 	padding-right: 10px;
-	text-align: right;	
 }
 
 .Mappage-arrow {
@@ -25,4 +24,16 @@
 
 .Mappage-arrow.right {
 	right: 0;
+}
+
+.Mappage-logo {
+	background-image: url(https://www.bluebeam.com/user/pages/images/logos/bug-blue.svg);
+	background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9000;
+    height: 20px;
+    width: 20px;
+	padding: 21px;
 }

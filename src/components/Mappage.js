@@ -30,7 +30,7 @@ export default class Mappage extends Component {
 	markerRef = React.createRef();
 	mapRef = React.createRef();
 
-	showPopup = (index, markers) => {
+	showPopup(index, markers) {
 		if (markers) {
 			let lyr = markers.leafletElement.getLayers()[index];
 			if (lyr) {
@@ -44,15 +44,15 @@ export default class Mappage extends Component {
 		}
 	}
 
-	nextIndex = (i, list) => {
+	nextIndex(i, list) {
 		return i + 1 === list.length ? 0 : i + 1;
 	}
 
-	prevIndex = (i, list) => {
+	prevIndex(i, list) {
 		return i - 1 < 0 ? list.length - 1 : i - 1;
 	}
 
-	getDaysUntilDue = (duedate) => {
+	getDaysUntilDue(duedate) {
 		let days = moment.duration(moment(duedate) - moment()).days();
 		if (days > 0) {
 			return "Due in " + days + " days";
@@ -101,14 +101,8 @@ export default class Mappage extends Component {
 				let stateColor = this.getColor(item.state);
 				markers.push(
 					<CircleMarker center={item.latLng} color={stateColor} key={i}>
-						<Popup autoPan={true} className="popupFormat">
-							<h5 style={{ color: stateColor, fontWeight: 'bold' }}>
-								{item.state}
-							</h5>
-							{item.state.toLowerCase() !== "completed" ?
-								<span>{this.getDaysUntilDue(item.duedate)}</span>
-								: null
-							}
+						<Popup autoPan={true} className="Mappage-popup">
+							<h5 style={{ color: stateColor, fontWeight: 'bold' }}>{item.state}</h5>
 							<h5>{item.description}</h5>
 							<table>
 								<tbody>
@@ -118,6 +112,9 @@ export default class Mappage extends Component {
 									<tr><th>Floor</th><td>{item.floor}</td></tr>
 								</tbody>
 							</table>
+							{item.state.toLowerCase() !== "completed" ?
+								<p style={{ fontWeight: 'bold' }}>{this.getDaysUntilDue(item.duedate)}</p> : null
+							}
 						</Popup>
 					</CircleMarker>
 				)
@@ -157,6 +154,7 @@ export default class Mappage extends Component {
 						}}>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</div>
+					<div className="Mappage-logo"></div>
 				</Map>
 			)
 		}
