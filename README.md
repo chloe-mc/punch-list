@@ -18,6 +18,14 @@ To run locally:
 To deploy:	
 ### `npm build `
 
+To query: 
+### `url/discipline?property=value`
+
+_Example queries_
+ - https://hungry-jepsen-b25582.netlify.com/plumbing?state=completed
+ - https://hungry-jepsen-b25582.netlify.com/?state=open
+
+
 ## Design Notes
 
 I chose to build this using client-side rendering and react-router because the project was small and there was a limited time frame. If this was a production application that needed a more robust user experience and better performance I would consider using server-side rendering.

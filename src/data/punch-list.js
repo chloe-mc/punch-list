@@ -1,5 +1,17 @@
 const punchList = [
 	{
+		"description": "Leaky faucet",
+		"room": "Restroom",
+		"latLng": [
+			32.74039033543139,
+			-97.36894011497498
+		],
+		"discipline": "Plumbing",
+		"duedate": "10/10/2019",
+		"state": "Completed",
+		"floor": "1"
+	},
+	{
 		"description": "Toilet will not flush",
 		"room": "Restroom",
 		"latLng": [
@@ -15,7 +27,7 @@ const punchList = [
 		"room": "Restroom",
 		"latLng": [
 			32.74037833543139,
-			-97.36904011497498
+			-97.36896011497498
 		],
 		"discipline": "Plumbing",
 		"duedate": "10/11/2019",
