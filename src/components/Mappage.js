@@ -52,6 +52,12 @@ export default class Mappage extends Component {
 		return i - 1 < 0 ? list.length - 1 : i - 1;
 	}
 
+	updateCurrentIndex(i) {
+		this.setState({
+			currentIndex: i
+		})
+	}
+
 	getDaysUntilDue(duedate) {
 		let days = moment.duration(moment(duedate) - moment()).days();
 		if (days > 0) {
@@ -100,7 +106,8 @@ export default class Mappage extends Component {
 			punchList.forEach((item, i) => {
 				let stateColor = this.getColor(item.state);
 				markers.push(
-					<CircleMarker center={item.latLng} color={stateColor} key={i}>
+					<CircleMarker center={item.latLng} color={stateColor} key={i}
+						onclick={() => this.updateCurrentIndex(i)}>
 						<Popup autoPan={true} className="Mappage-popup">
 							<h5 style={{ color: stateColor, fontWeight: 'bold' }}>{item.state}</h5>
 							<h5>{item.description}</h5>
