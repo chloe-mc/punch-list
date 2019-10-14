@@ -2,7 +2,6 @@ import Mappage from '../components/Mappage';
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { Marker, Popup } from 'react-leaflet';
 
 Enzyme.configure({ adapter: new Adapter() });
 

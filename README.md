@@ -12,6 +12,7 @@ To run the test suite:
 ### `npm test `
 
 To run locally:
+### `npm install `
 ### `npm start `
 
 To deploy:	
@@ -19,7 +20,7 @@ To deploy:
 
 ## Design Notes
 
-I chose to build this using client-side rendering and react-router because that is what I am familiar with, the project was small, and there was a limited time frame. If this was a production application that needed a more robust user experience and better performance I would considered using server-side rendering.
+I chose to build this using client-side rendering and react-router because the project was small and there was a limited time frame. If this was a production application that needed a more robust user experience and better performance I would consider using server-side rendering.
 
 ## Limitations
 
@@ -49,6 +50,7 @@ These are my notes from the planning stage before development began.
  - Previous and Next buttons to navigate between tasks
 
 ## Nice To Have
+ - Days until task is due
  - Make it pretty
  - Task list to accompany map
  - Search bar
