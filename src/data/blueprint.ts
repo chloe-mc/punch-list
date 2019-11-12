@@ -1,4 +1,6 @@
-const blueprint = {
+import { FeatureCollection } from "geojson";
+
+const blueprint: FeatureCollection = {
 	"type": "FeatureCollection",
 	"features": [
 		{

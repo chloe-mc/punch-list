@@ -1,4 +1,4 @@
-import Mappage from '../components/Mappage';
+import Mappage from './Mappage';
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
