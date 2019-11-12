@@ -83,8 +83,8 @@ export default class Mappage extends Component<Props, State> {
 
 	getDaysUntilDue(duedate: string): string {
 		let due: moment.Moment = moment(duedate);
-		let today: moment.Moment = moment();
-		let days = moment.duration(due.diff(today )).days();
+		let today: moment.Moment = moment().startOf('day');
+		let days: number = due.diff(today, 'days');
 		if (days > 0) {
 			return "Due in " + days + " days";
 		} else if (days < 0) {

@@ -21,7 +21,9 @@ describe('<Mappage />', () => {
 	it('returns days', () => {
 		const wrapper = shallow(<Mappage />);
 		const instance = wrapper.instance();
-		expect(instance.getDaysUntilDue(new Date().toString())).toBe("Due today");
+		expect(instance.getDaysUntilDue(moment().startOf('day'))).toBe("Due today");
+		expect(instance.getDaysUntilDue(moment().startOf('day').add(1, 'days'))).toBe("Due in 1 days");
+		expect(instance.getDaysUntilDue(moment().startOf('day').subtract(1, 'days'))).toBe("Overdue by 1 days");
 	});
 
 	it('returns correct color', () => {
