@@ -1,5 +1,4 @@
 import punchList from './punch-list';
-import { LatLng } from 'leaflet';
 import Punch from './Punch';
 
 const dao = {

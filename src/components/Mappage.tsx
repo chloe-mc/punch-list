@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import './Mappage.css';
+import './Mappage.scss';
 import dao from '../data/punch-list-dao';
-import { Map, TileLayer, CircleMarker, Popup, FeatureGroup, GeoJSON, ZoomControl } from 'react-leaflet';
+import { Map, TileLayer, CircleMarker, Popup, FeatureGroup, GeoJSON } from 'react-leaflet';
 import blueprint from '../data/blueprint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import Message from '../components/Message';
-import { LatLngExpression, Layer, Marker, LatLng } from 'leaflet';
-import { number } from 'prop-types';
+import { Marker, LatLng } from 'leaflet';
 
 const mapConfig = {
 	accessToken: "pk.eyJ1IjoiY2hsb2UtbWMiLCJhIjoiY2praGJibDFuMHNvZzN2bzNtcWZnbXhhcCJ9.xXYfoIoIpRaO4CXYrqywZw",
@@ -40,9 +39,6 @@ interface State {
 }
 
 export default class Mappage extends Component<Props, State> {
-	// constructor(props) {
-	// 	super(props)
-	// }
 	state: State = {
 		punchList: null,
 		position: new LatLng(32.741209, -97.368824),
@@ -164,7 +160,7 @@ export default class Mappage extends Component<Props, State> {
 					animate={true}
 					center={position || mapConfig.defaultLocation}
 					zoom={zoom}
-					className="Mappage-map">
+					className="Mappage">
 					<TileLayer
 						attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 						url={"https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=" + mapConfig.accessToken}
@@ -175,7 +171,7 @@ export default class Mappage extends Component<Props, State> {
 							{markers}
 						</FeatureGroup> : <Message message="No tasks ¯\_(ツ)_/¯" />
 					}
-					<div className="Mappage-arrow left"
+					<div className="arrow-left"
 						onClick={() => {
 							if (punchList) {
 								let i = this.prevIndex(currentIndex, punchList);
@@ -184,7 +180,7 @@ export default class Mappage extends Component<Props, State> {
 						}}>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</div>
-					<div className="Mappage-arrow right"
+					<div className="arrow-right"
 						onClick={() => {
 							if (punchList) {
 								let i = this.nextIndex(currentIndex, punchList);
@@ -193,7 +189,7 @@ export default class Mappage extends Component<Props, State> {
 						}}>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</div>
-					<div className="Mappage-logo"></div>
+					<div className="logo"></div>
 				</Map>
 			)
 		}

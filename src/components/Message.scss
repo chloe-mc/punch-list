@@ -1,10 +1,12 @@
+@import '../styles/constants';
+
 .Message-box {
     z-index: 9000;
     position: absolute;
 	top: 0;
 	width: 40%;
 	right: 30%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: $background;
     color: white;
     font-size: 20px;
     padding: 10px;

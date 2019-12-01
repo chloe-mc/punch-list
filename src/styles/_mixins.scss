@@ -1,0 +1,11 @@
+@mixin map-arrow($left-or-right) {
+	z-index: $on-top-of-map;	
+	color: white;
+	font-size: 20px;
+	background-color: $background;
+	padding: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 49%;
+	#{$left-or-right}: 0;
+}
